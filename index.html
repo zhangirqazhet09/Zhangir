@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Profile</title>
+    <style>
+        body {
+            background: #f4f6f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2c3e50;
+            margin: 0;
+            padding: 20px;
+        }
+        body.dark {
+            background: #1a1a2e;
+            color: #e0e0e0;
+        }
+        header {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        header h1 {
+            margin: 0;
+            font-style: normal;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            position: relative;
+        }
+        body.dark section {
+            background: #161625;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            float: left;
+            margin: 0 20px 10px 0;
+        }
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #e74c3c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+        }
+        input, textarea, button {
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #003366;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        body.dark button {
+            background: #4e54c8;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background: #003366;
+            color: white;
+        }
+        body.dark th {
+            background: #4e54c8;
+        }
+        #hiddenContent {
+            display: none;
+            background: #e8f4fd;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        body.dark #hiddenContent {
+            background: #223344;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="welcomeHeading">Welcome, AP Scholar!</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#metrics">Metrics</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>Student Profile</h2>
+            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=100" alt="Profile" class="profile-img">
+            <div class="badge">Top</div>
+            <div style="overflow: hidden;">
+                <h3>Academic Focus</h3>
+                <p>Driven 10th-grade student dedicated to master-level STEM pathways. Preparing extensively for AP Calculus BC and AP Physics C exams.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Interactive Tools</h2>
+            <input type="text" id="usernameInput" placeholder="Enter name">
+            <button onclick="updateGreeting()">Submit Name</button>
+            <br>
+            <button onclick="toggleTheme()">Toggle Theme</button>
+            <button onclick="triggerAlert()">View Scores</button>
+            <button onclick="revealData()">Reveal Insights</button>
+            <div id="hiddenContent">
+                <p id="targetText">Target parameters updated to maximum efficiency.</p>
+            </div>
+        </section>
+
+        <section id="metrics">
+            <h2>Academic Tracking</h2>
+            <table>
+                <thead>
+                    <tr><th>Module</th><th>Target</th><th>Hours</th><th>Resource</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>AP Calc: Limits</td><td>5</td><td>4</td><td>Thomas Calc</td><td>Done</td></tr>
+                    <tr><td>AP Calc: Derivatives</td><td>5</td><td>6</td><td>FRQ Sheets</td><td>Stable</td></tr>
+                    <tr><td>AP Calc: Integrals</td><td>5</td><td>8</td><td>Khan Academy</td><td>Stable</td></tr>
+                    <tr><td>AP Calc: Series</td><td>5</td><td>12</td><td>Practice MCQ</td><td>Active</td></tr>
+                    <tr><td>AP Calc: Vectors</td><td>5</td><td>5</td><td>Review Sets</td><td>Ongoing</td></tr>
+                    <tr><td>AP Phys: Kinematics</td><td>5</td><td>6</td><td>MIT Guide</td><td>Done</td></tr>
+                    <tr><td>AP Phys: Dynamics</td><td>5</td><td>8</td><td>Past Exams</td><td>Stable</td></tr>
+                    <tr><td>AP Phys: Energy</td><td>5</td><td>7</td><td>Problem Sets</td><td>Advanced</td></tr>
+                    <tr><td>AP Phys: Momentum</td><td>5</td><td>6</td><td>FRQ Prep</td><td>Active</td></tr>
+                    <tr><td>AP Phys: Rotation</td><td>5</td><td>10</td><td>Advanced Sims</td><td>Review</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact">
+            <h2>Feedback</h2>
+            <form onsubmit="return false;">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Your feedback..." required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Portfolio</p>
+    </footer>
+
+    <script>
+        function updateGreeting() {
+            const val = document.getElementById('usernameInput').value;
+            if (val.trim()) document.getElementById('welcomeHeading').innerHTML = "Welcome, " + val + "!";
+        }
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+        }
+        function triggerAlert() {
+            window.alert("Targets: AP Physics C [5] | AP Calculus BC [5]");
+        }
+        function revealData() {
+            document.getElementById('targetText').innerHTML = "Strategy Verified: Efficiency at maximum.";
+            document.getElementById('hiddenContent').style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
